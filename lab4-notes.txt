@@ -1,0 +1,18 @@
+Part 1
+======
+
+Can the value of the variable i become strictly greater than 200?
+E<> i > 200 -- Property is not satisfied.
+A[] not (i > 200) -- Property is satisfied.
+
+Is it true that no matter what happens (always) is the value of i smaller than or equal to 100?
+A[] i <= 100 -- Property is satisfied.
+
+Is it true that no matter what happens (always) is the value of i strictly smaller than 100?
+A[] i < 100 -- Property is not satisfied.
+
+Is there a run of the system in which i never exceeds 42?
+E[] i <= 42 -- Property is satisfied.
+
+Is it true that no matter what happens (always) is the value of i greater than or equal to 0?
+A[] i >= 0 -- Property is not satisfied.
