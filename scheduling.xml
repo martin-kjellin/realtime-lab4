@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd'><nta><declaration>// Place global declarations here.
+int CPU1_C;
+chan CPU1_use, CPU1_done;
+int CPU2_C;
+chan CPU2_use, CPU2_done;
+int done_counter;
+clock y;
+</declaration><template><name x="5" y="5">CPU</name><parameter>chan &amp;use, chan &amp;done, int &amp;C</parameter><declaration>// Place local declarations here.
+int x=0;
+
+</declaration><location id="id0" x="8" y="-8"><name x="-2" y="-38">InUse</name><label kind="invariant" x="-2" y="7">x &lt;= C</label></location><location id="id1" x="8" y="-120"><name x="-2" y="-150">Idle</name></location><init ref="id1"/><transition><source ref="id1"/><target ref="id0"/><label kind="synchronisation" x="72" y="-96">use?</label><label kind="assignment" x="72" y="-72">x := 0</label><nail x="64" y="-120"/><nail x="64" y="-8"/></transition><transition><source ref="id0"/><target ref="id1"/><label kind="guard" x="-104" y="-88">x == C</label><label kind="synchronisation" x="-104" y="-64">done!</label><nail x="-56" y="-8"/><nail x="-56" y="-120"/></transition></template><template><name>Job</name><parameter>int C1, int C2</parameter><location id="id2" x="0" y="0"></location><init ref="id2"/></template><system>// Place template instantiations here.
+CPU1 = CPU(CPU1_use, CPU1_done, CPU1_C);
+CPU2 = CPU(CPU2_use, CPU2_done, CPU2_C);
+// List one or more processes to be composed into a system.
+system JobA, JobB, JobC, JobD, JobE, CPU1, CPU2;</system></nta>
