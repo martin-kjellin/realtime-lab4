@@ -16,6 +16,16 @@ self = true</label></transition><transition><source ref="id6"/><target ref="id4"
 CPU1 = CPU(CPU1_use, CPU1_done, CPU1_C);
 CPU2 = CPU(CPU2_use, CPU2_done, CPU2_C);
 
+// First system
+// JobA = Job(3, 4, flag, flag, flagA);
+// JobB = Job(3, 2, flag, flag, flagB);
+// JobC = Job(6, 5, flagA, flagB, flagC);
+// JobD = Job(3, 3, flagB, flag, flagD);
+// JobE = Job(2, 1, flagD, flag, flagE);
+// List one or more processes to be composed into a system.
+// system JobA, JobB, JobC, JobD, JobE, CPU1, CPU2;
+
+// Second system
 JobA = Job(1, 2, flag, flag, flagA);
 JobB = Job(4, 2, flag, flag, flagB);
 JobC = Job(5, 5, flagA, flag, flagC);
